@@ -2,17 +2,19 @@ library(dplyr)
 library(stringr)
 library(lintr)
 library(styler)
+source("./Data/app_cleaned.R")
+source("./Data/google_cleaned.R")
 
-get_summary_table_google <- function(google_df) {
-  google_df <- google_df %>% filter(!is.na(as.numeric(Rating)))
-  google_df <- google_df %>% filter(!is.na(Rating))
-  google_df <- google_df %>% filter(!is.na(as.numeric(Reviews)))
-  google_df <- google_df %>% filter(!is.na(Reviews))
-  ret_table <- google_df %>%
+get_summary_table_google <- function(google_cleaned) {
+  google_cleaned <- google_cleaned %>% filter(!is.na(as.numeric(Rating)))
+  google_cleaned <- google_cleaned %>% filter(!is.na(Rating))
+  google_cleaned <- google_cleaned %>% filter(!is.na(as.numeric(Reviews)))
+  google_cleaned <- google_cleaned %>% filter(!is.na(Reviews))
+  ret_table <- google_cleaned %>%
     group_by(Category) %>%
     summarise(
       avg_rating = mean(as.numeric(Rating), na.rm = TRUE),
-      avg_price = mean(as.numeric(gsub("[$]", "", Price)),
+      avg_price = mean(as.numeric(gsub("[$]", "", price)),
         na.rm = TRUE
       ),
       count = length(Category)
@@ -21,8 +23,9 @@ get_summary_table_google <- function(google_df) {
   return(ret_table)
 }
 
+test <- get_summary_table_google(google_cleaned)
 get_summary_table_apple <- function(apple_df) {
-  ret_table2 <- apple_df %>%
+  ret_table <- apple_df %>%
     group_by(prime_genre) %>%
     summarise(
       avg_rating = mean(as.numeric(user_rating), na.rm = TRUE),
@@ -32,3 +35,4 @@ get_summary_table_apple <- function(apple_df) {
     arrange(desc(count))
   return(ret_table)
 }
+test2 <- get_summary_table_apple(apple_cleaned)
