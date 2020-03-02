@@ -1,7 +1,7 @@
 library(dplyr)
 library(stringr)
 
-google_initial <- read.csv("./data/Google-Playstore-Full.csv",
+google_initial <- read.csv("Google-Playstore-Full.csv",
   stringsAsFactors = FALSE
 )
 google_cleaned <- google_initial %>%
