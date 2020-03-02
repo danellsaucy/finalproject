@@ -37,7 +37,7 @@ This table contains information that was calculated such as the average rating p
 This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple Store. From this data we can see that "`r test2[1,1]`" contains the most number of applications for the specified category containing `r test2[1,4]` different applications.
 
 ## Visualizations
-### Plot 1
+### Plot 1(Amount of Applications per Category)
 ```{r, echo=FALSE}
 plot_one_google
 ```
@@ -46,7 +46,7 @@ plot_one_google
 plot_one_apple
 ```
 
-### Plot 2
+### Plot 2 (Average Ratings V.S. Average Price)
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 plot_two_google
 ```
