@@ -7,7 +7,7 @@ get_summary_info <- function(dataset) {
   ret$total_earned <- sum(dataset$price)
   ret$avg_reviews <- mean(as.numeric(dataset$Reviews), na.rm = FALSE)
   ret$uniq_cont_rating <- unique(dataset$Content.Rating)
-  return (ret)
-} 
+  return(ret)
+}
 
 get_summary_info(google_cleaned)

@@ -24,3 +24,5 @@ google_cleaned <- google_cleaned %>%
   select(-c(Price, Installs))
 google_cleaned <- google_cleaned %>%
   filter(Size != "Varies with device")
+google_cleaned <- google_cleaned %>%
+  filter(Category != "TRAVEL")

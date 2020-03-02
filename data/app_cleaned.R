@@ -4,7 +4,7 @@ library(dplyr)
 #   select(-c("X", "id", "currency", "ver", "sup_devices.num", "ipadSc_urls.num", "vpp_lic"))
   
 apple_initial <- read.csv("./data/AppleStore.csv", stringsAsFactors = FALSE)
-apple_cleaned <- app_initial %>%
+apple_cleaned <- apple_initial %>%
   select(c(
     size_bytes, price,
     rating_count_tot, user_rating,

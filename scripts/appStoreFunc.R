@@ -7,5 +7,5 @@ get_summary_info <- function(dataset) {
   ret$total_earned <- sum(dataset$price)
   ret$avg_user_rating <- mean(dataset$user_rating)
   ret$uniq_genre <- unique(dataset$prime_genre)
-  return (ret)
-} 
+  return(ret)
+}
