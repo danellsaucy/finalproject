@@ -2,13 +2,47 @@
 title: "Final Project"
 output: html_document
 Group Name: "*GrOuP* **NAmE**"
-*Group Members: Danell, Rhea, Alex, Edward*
 ---
-# Introduction
 
-# Summary (At Least 5 values)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("scripts/sum_table.R")
+source("scripts/chart_one.R")
+source("scripts/chart_two.R")
+library(knitr)
+```
 
-# Table of Aggregated Data
+## Introduction
 
-# Visualizations
+## Summary (At Least 5 values)
 
+## Table of Aggregated Data
+### Google Playstore
+`r kable(test)`
+
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Google Playstore. From this data we can see that "`r test[1,1]`" contains the most number of applications for the specified category containing `r test[1,4]` different applications.
+
+
+### Apple Store
+`r kable(test2)`
+
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple Store. From this data we can see that "`r test2[1,1]`" contains the most number of applications for the specified category containing `r test2[1,4]` different applications.
+
+## Visualizations
+### Plot 1
+```{r, echo=FALSE}
+plot_one_google
+```
+
+```{r, echo=FALSE}
+plot_one_apple
+```
+
+### Plot 2
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+plot_two_google
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+plot_two_apple
+```
