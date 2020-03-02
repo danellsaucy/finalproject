@@ -4,15 +4,23 @@ output: html_document
 Group Name: "*GrOuP* **NAmE**"
 ---
 
+
+# Summary (At Least 5 values)
+=======
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
 source("scripts/sum_table.R")
 source("scripts/chart_one.R")
 source("scripts/chart_two.R")
-library(knitr)
 ```
 
 ## Introduction
+
+As a result of smartphones slowly becoming a crucial part of modern day society, the demand for mobile applications has increased greatly. The number of apps on the App Stores has been expanding at an increased rate due to app developers constantly publishing apps to meet demand. According to Apple and Google, in 2019, there are 2.2 million and 2.8 million apps available for download on their respective App Stores.
+We have downloaded two different datasets “Mobile App Store” (collected July 2017)  and “Google Play Store Apps”(April 2019). These two data sets contain information regarding apps on the Apple App store and Google Play store such as price, rating, genre, size, and content rating. 
+People that own a smartphone device have their own unique conglomeration of different types of apps based on their interests and personality, making it more important to find trends in mobile apps to aid in the creation of successful apps. We will be analyzing and comparing the previously mentioned data sets to determine what makes an app successful on the different app stores. This data will create useful mobile app analytics to help developers understand existing strategies and categories that drive growth and retention of future app users.
+
 
 ## Summary (At Least 5 values)
 
