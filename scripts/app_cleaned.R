@@ -16,3 +16,6 @@ as.numeric(gsub("[+]", "", apple_cleaned[1, 5]))
 apple_cleaned <- apple_cleaned %>%
   select(-c(cont_rating))
 
+count_app_game <- apple_cleaned %>%
+  filter(prime_genre == "Games") %>%
+  nrow()

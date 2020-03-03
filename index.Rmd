@@ -29,8 +29,8 @@ People that own a smartphone device have their own unique conglomeration of diff
 
 For both app stores we have aggregated the individual apps in each data set into their corresponding categories. Then we calculated the average rating, average price, and number of applications in those categories. We created two summary tables one for each app store, allowing us to compare and dictate which type of apps are more successful in the different app stores. 
 
-The category with the most apps created for in the Google Play Store is "Education" with a count of "r count_goo_educ", while for the Apple App Store it's "Games" with a count of "3862". This tells us that these are the most heavily saturated categories in the app stores, resulting in it being more difficult for apps to gain popularity and stand out in these categories. 
-The category with the highest average rating in the Google Play Store and Apple App Store respectively are "Books_And_Reference" with "4.48" and "Productivity" with "4.00". This tell us that more consumers are satisfied with these categories compared to others.
+The category with the most apps created for in the Google Play Store is "Education" with a count of `r count_goo_educ`, while for the Apple App Store it's "Games" with a count of `r count_app_game`. This tells us that these are the most heavily saturated categories in the app stores, resulting in it being more difficult for apps to gain popularity and stand out in these categories. 
+The category with the highest average rating in the Google Play Store and Apple App Store respectively are "Books_And_Reference" with `r highest_rating_goog` and "Productivity" with "4.00". This tell us that more consumers are satisfied with these categories compared to others.
 The category with the lowest average rating in the Google Play Store and Apple App Store respectively are “Maps_And_Navigation” with “4.02” and “Catalogs” with “2.01”. This information tells us that these categories are not giving consumers as much satisfaction, which can indicate that app developers should avoid this category in order to raise the chances of developing a popular app.
 
 
