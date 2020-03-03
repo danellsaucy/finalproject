@@ -83,4 +83,4 @@ google_pie
 apple_pie
 ```
 
-The reason why we created pie chart is to show the distributions of spending on apps in different age groups. As the size and proportion showed by pie charts, we can easily get the idea of which category attracts relatively attracts more or less people. As we can see from the charts, top few categories in Google Play are mostly education apps for 4+, games apps for 12+, sports apps for 9+ and 17+. As for Apple Store, games apps are welcomed among all different ages of groups.
+The reason why we created pie chart is to show the distributions of spending on apps in different age groups. As the size and proportion showed by pie charts, we can easily get the idea of which category attracts relatively more or less people. As we can see from the charts, top few categories in Google Play are mostly education apps for 4+, games apps for 12+, sports apps for 9+ and 17+. For the education apps downloaded by ages 4+, we can assume that parents or gaurdians might be the users who download the apps for their kids. As for Apple Store, games apps are welcomed among all different ages of groups, since it occupies a huge proportion. 
