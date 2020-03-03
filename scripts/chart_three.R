@@ -7,21 +7,6 @@ library(ggpubr)
 source("./scripts/app_cleaned.R")
 source("./scripts/google_cleaned.R")
 
-age_rating_apple <- apple_cleaned %>% 
-  group_by(new_content_rating, prime_genre) %>%
-  summarise(amount_spent = sum(price, na.rm = TRUE))
-
-apple_rating_4 <- age_rating_apple %>% filter(new_content_rating == "4")
-apple_rating_9 <- age_rating_apple %>% filter(new_content_rating == "9")
-apple_rating_12 <- age_rating_apple %>% filter(new_content_rating == "12")
-apple_rating_17 <- age_rating_apple %>% filter(new_content_rating == "17")
-
-f <- list(
-  family = "Courier New, monospace",
-  size = 30,
-  color = "black")
-
-# annotations
 a <- list(
   text = "4+",
   size = 30,
@@ -78,19 +63,51 @@ d <- list(
   showarrow = FALSE
 )
 
+age_rating_apple <- apple_cleaned %>% 
+  group_by(new_content_rating, prime_genre) %>%
+  summarise(amount_spent = sum(price, na.rm = TRUE))
+
+apple_rating_4 <- age_rating_apple %>% filter(new_content_rating == "4")
+apple_rating_9 <- age_rating_apple %>% filter(new_content_rating == "9")
+apple_rating_12 <- age_rating_apple %>% filter(new_content_rating == "12")
+apple_rating_17 <- age_rating_apple %>% filter(new_content_rating == "17")
+
 apple_pie <- plot_ly()
-apple_pie <- apple_pie %>% add_pie(data = apple_rating_4, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside',
-                       name = "4+", domain = list(row = 0, column = 0)) %>% layout(annotations = a)
-apple_pie <- apple_pie %>% add_pie(data = apple_rating_9, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside', 
-                       name = "9+", domain = list(row = 0, column = 1)) %>% layout(annotations = b)
-apple_pie <- apple_pie %>% add_pie(data = apple_rating_12, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside',
-                       name = "12+", domain = list(row = 1, column = 0)) %>% layout(annotations = c)
-apple_pie <- apple_pie %>% add_pie(data = apple_rating_17, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside',
-                       name = "17+", domain = list(row = 1, column = 1)) %>% layout(annotations = d)
-apple_pie <- apple_pie %>% layout(title = "Spending in different age groups", showlegend = T,
+apple_pie <- apple_pie %>% add_pie(data = apple_rating_4, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside', name = "4+",
+                                   domain = list(row = 0, column = 0)) %>% layout(annotations = a)
+apple_pie <- apple_pie %>% add_pie(data = apple_rating_9, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside', name = "9+",
+                                   domain = list(row = 0, column = 1)) %>% layout(annotations = b)
+apple_pie <- apple_pie %>% add_pie(data = apple_rating_12, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside', name = "12+",
+                                   domain = list(row = 1, column = 0)) %>% layout(annotations = c)
+apple_pie <- apple_pie %>% add_pie(data = apple_rating_17, labels = ~prime_genre, values = ~amount_spent, textposition = 'inside', name = "17+",
+                                   domain = list(row = 1, column = 1)) %>% layout(annotations = d)
+apple_pie <- apple_pie %>% layout(title = "Spending in different age groups (Apple)", showlegend = T,
                       grid=list(rows=2, columns=2),
                       xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, showlegend = TRUE),
                       yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, showlegend = TRUE),
                       uniformtext=list(minsize=12, mode='hide'))
-fig
+
+age_rating_google <- google_cleaned %>% 
+  group_by(new_content, Category) %>%
+  summarise(amount_spent = sum(price, na.rm = TRUE))
+
+google_rating_4 <- age_rating_google %>% filter(new_content == 4)
+google_rating_9 <- age_rating_google %>% filter(new_content == 9)
+google_rating_12 <- age_rating_google %>% filter(new_content == 12)
+google_rating_17 <- age_rating_google %>% filter(new_content == 17)
+
+google_pie <- plot_ly()
+google_pie <- google_pie %>% add_pie(data = google_rating_4, labels = ~Category, values = ~amount_spent, textposition = 'inside', name = "4+",
+                                     domain = list(row = 0, column = 0)) %>% layout(annotations = a)
+google_pie <- google_pie %>% add_pie(data = google_rating_9, labels = ~Category, values = ~amount_spent, textposition = 'inside', name = "9+",
+                                     domain = list(row = 0, column = 1)) %>% layout(annotations = b)
+google_pie <- google_pie %>% add_pie(data = google_rating_12, labels = ~Category, values = ~amount_spent, textposition = 'inside', name = "12+",
+                                     domain = list(row = 1, column = 0)) %>% layout(annotations = c)
+google_pie <- google_pie %>% add_pie(data = google_rating_17, labels = ~Category, values = ~amount_spent, textposition = 'inside', name = "17+",
+                                     domain = list(row = 1, column = 1)) %>% layout(annotations = d)
+google_pie <- google_pie %>% layout(title = "Spending in different age groups (Google)", showlegend = T,
+                                  grid=list(rows=2, columns=2),
+                                  xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, showlegend = TRUE),
+                                  yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE, showlegend = TRUE),
+                                  uniformtext=list(minsize=12, mode='hide'))
 

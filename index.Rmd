@@ -38,13 +38,13 @@ The category with the lowest average rating in the Google Play Store and Apple A
 ### Google Playstore
 `r kable(google_table)`
 
-This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Google Playstore. From this data we can see that "`r test[1,1]`" contains the most number of applications for the specified category containing `r google_table[1,4]` different applications.
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Google Playstore. From this data we can see that "`r google_table[1,1]`" contains the most number of applications for the specified category containing `r google_table[1,4]` different applications.
 
 
 ### Apple Store
 `r kable(apple_table)`
 
-This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple Store. From this data we can see that "`r test2[1,1]`" contains the most number of applications for the specified category containing `r apple_table[1,4]` different applications.
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple Store. From this data we can see that "`r apple_table[1,1]`" contains the most number of applications for the specified category containing `r apple_table[1,4]` different applications.
 
 ## Visualizations
 ### Plot 1(Amount of Applications per Category)
@@ -67,5 +67,9 @@ plot_two_apple
 
 ### Plot 3
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-fig
+google_pie
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+apple_pie
 ```

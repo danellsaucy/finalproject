@@ -6,7 +6,7 @@ library(ggpubr)
 source("./scripts/sum_table.R")
 
 plot_one_google <- ggplot(
-  data = test,
+  data = google_table,
   aes(x = Category, y = count)
 ) +
   ggtitle("Amount of applications per category (Google Play)") +
@@ -25,7 +25,7 @@ plot_one_google <- ggplot(
   )
 
 plot_one_apple <- ggplot(
-  data = test2,
+  data = apple_table,
   aes(x = prime_genre, y = count)
 ) +
   ggtitle("Amount of applications per category (Apple Store)") +
