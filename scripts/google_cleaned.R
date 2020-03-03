@@ -29,17 +29,11 @@ google_cleaned <- google_cleaned %>%
 google_cleaned <- google_cleaned %>%
   filter(Content.Rating != "Unrated")
 google_cleaned <- google_cleaned %>%
-  mutate(new_content = ifelse(Content.Rating == "Everyone", 4, 
-                              ifelse(Content.Rating == "Everyone 10+", 9,
-                                     ifelse(Content.Rating == "Teen", 12,
-                                            ifelse(Content.Rating == "Mature 17+" | Content.Rating == "Adults only 18+", 17, 0)))))
-count_goo_educ <- google_cleaned %>%
-  filter(Category == "EDUCATION") %>%
-  nrow()
-
-highest_rating_goog <- google_cleaned %>%
-  filter(Category == "BOOKS_AND_REFERENCE") %>%
-  select(Rating) %>% 
-  summarise(max = max(Rating)) %>%
-  as.numeric()
-
+  mutate(new_content = ifelse(Content.Rating == "Everyone", 4,
+    ifelse(Content.Rating == "Everyone 10+", 9,
+      ifelse(Content.Rating == "Teen", 12,
+        ifelse(Content.Rating == "Mature 17+" |
+          Content.Rating == "Adults only 18+", 17, 0)
+      )
+    )
+  ))

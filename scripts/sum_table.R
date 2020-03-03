@@ -14,10 +14,14 @@ get_summary_table_google <- function(google_cleaned) {
     group_by(Category) %>%
     summarise(
       avg_rating = round(mean(as.numeric(Rating), na.rm = TRUE), digits = 2),
-      overall_avg_price = round(mean(as.numeric(gsub("[$]", "", price)), na.rm = TRUE),
-        digits = 2
+      overall_avg_price = round(mean(as.numeric(gsub("[$]", "", price)),
+        na.rm = TRUE
       ),
-      paid_avg_price = round(mean(replace(price, price==0, NA), na.rm = TRUE), digits = 2),
+      digits = 2
+      ),
+      paid_avg_price = round(mean(replace(price, price == 0, NA),
+        na.rm = TRUE
+      ), digits = 2),
       count = length(Category)
     ) %>%
     arrange(desc(count))
@@ -34,7 +38,9 @@ get_summary_table_apple <- function(apple_df) {
         digits = 2
       ),
       overall_avg_price = round(mean(price, na.rm = TRUE), digits = 2),
-      paid_avg_price = round(mean(replace(price, price==0, NA), na.rm = TRUE), digits = 2),
+      paid_avg_price = round(mean(replace(price, price == 0, NA),
+        na.rm = TRUE
+      ), digits = 2),
       count = length(prime_genre)
     ) %>%
     arrange(desc(count))
