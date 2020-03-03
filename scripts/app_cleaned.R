@@ -19,3 +19,9 @@ apple_cleaned <- apple_cleaned %>%
 count_app_game <- apple_cleaned %>%
   filter(prime_genre == "Games") %>%
   nrow()
+
+highest_rating_app <- apple_cleaned %>%
+  filter(prime_genre == "Productivity") %>%
+  select(user_rating) %>% 
+  summarise(max = max(user_rating)) %>%
+  as.numeric()

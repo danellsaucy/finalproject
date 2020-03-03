@@ -30,7 +30,7 @@ People that own a smartphone device have their own unique conglomeration of diff
 For both app stores we have aggregated the individual apps in each data set into their corresponding categories. Then we calculated the average rating, average price, and number of applications in those categories. We created two summary tables one for each app store, allowing us to compare and dictate which type of apps are more successful in the different app stores. 
 
 The category with the most apps created for in the Google Play Store is "Education" with a count of `r count_goo_educ`, while for the Apple App Store it's "Games" with a count of `r count_app_game`. This tells us that these are the most heavily saturated categories in the app stores, resulting in it being more difficult for apps to gain popularity and stand out in these categories. 
-The category with the highest average rating in the Google Play Store and Apple App Store respectively are "Books_And_Reference" with `r highest_rating_goog` and "Productivity" with "4.00". This tell us that more consumers are satisfied with these categories compared to others.
+The category with the highest average rating in the Google Play Store and Apple App Store respectively are "Books_And_Reference" with `r highest_rating_goog` and "Productivity" with `r highest_rating_app`. This tell us that more consumers are satisfied with these categories compared to others.
 The category with the lowest average rating in the Google Play Store and Apple App Store respectively are “Maps_And_Navigation” with “4.02” and “Catalogs” with “2.01”. This information tells us that these categories are not giving consumers as much satisfaction, which can indicate that app developers should avoid this category in order to raise the chances of developing a popular app.
 
 
@@ -46,6 +46,13 @@ This table contains information that was calculated such as the average rating p
 
 This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple Store. From this data we can see that "`r apple_table[1,1]`" contains the most number of applications for the specified category containing `r apple_table[1,4]` different applications.
 
+
+### Overall
+
+After we summarized the individual app data from the data sets into a table, we have sorted the information into category, average rating, overall average price, average paid price, and count. The category column contains the available categories given to app developers by Google and Apple that sort the type of app uploaded. The average rating column calculates the average ratings given to each app category. For the average price of each category two different values were calculated. Overall Average Price is the total average price of apps in the category including free apps, which are counted as $0. While in average paid price the free apps are filtered out, so it is the average listing price of all paid apps in that category. The count column is the number of apps uploaded into each category. By using this data we are able to quickly find comparisons such as which categories have the best ratings from consumer satisfaction, which category has the highest listing price, and which category is the most app saturated. These data comparisons will help app developers determine the factors that affect the success of an app.
+
+
+
 ## Visualizations
 ### Plot 1(Amount of Applications per Category)
 ```{r, echo=FALSE}
@@ -56,6 +63,9 @@ plot_one_google
 plot_one_apple
 ```
 
+For this plot we created a bar chart for both Google Play Store and Apple App Store that shows the number of applications that were uploaded into each category. This chart was included to visually show which categories were more saturated with apps. For the Google Play Store it was “Education” and for the Apple App Store it was “Games”. Using these charts app developers are able to determine which genre of apps they should be developing for. Since the categories that are heavily saturated with the same types of apps will make it harder for individual apps to stand out amongst the others. The app will become lost amid the sea of similar apps making it difficult to find on the app store, ultimately impacting the number of downloads it will receive. 
+
+
 ### Plot 2 (Average Ratings V.S. Average Price)
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 plot_two_google
@@ -64,6 +74,9 @@ plot_two_google
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 plot_two_apple
 ```
+
+This scatter plot is created to show the correlation between the average listing price and the average rating of apps. The listing price of apps will affect whether someone is willing to download that app, if the price is too high that will usually result in people not downloading the app. By using this plot developers are able to see how satisfied people are in comparison with the listed price to determine what price to list their apps to maximize the chances of success.
+
 
 ### Plot 3
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}

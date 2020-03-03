@@ -42,4 +42,4 @@ highest_rating_goog <- google_cleaned %>%
   select(Rating) %>% 
   summarise(max = max(Rating)) %>%
   as.numeric()
-  
+
