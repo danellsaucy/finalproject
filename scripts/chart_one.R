@@ -9,7 +9,7 @@ plot_one_google <- ggplot(
   data = google_table,
   aes(fill = count, x = Category, y = count)
 ) +
-  ggtitle("Amount of applications per category (Google Play)") +
+  ggtitle("Amount of applications per category (Google Play Store)") +
   ylab("Number of applications") +
   xlab("Category") +
   geom_bar(stat = "identity", width = 0.8) +
@@ -28,7 +28,7 @@ plot_one_apple <- ggplot(
   data = apple_table,
   aes(fill = count, x = prime_genre, y = count)
 ) +
-  ggtitle("Amount of applications per category (Apple Store)") +
+  ggtitle("Amount of applications per category (Apple App Store)") +
   ylab("Number of applications") +
   xlab("Category") +
   geom_bar(stat = "identity", width = 0.8) +

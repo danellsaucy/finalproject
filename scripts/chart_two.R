@@ -20,7 +20,7 @@ plot_two_google <- plot_ly(
   color = ~overall_avg_price, size = ~overall_avg_price
 )
 plot_two_google <- plot_two_google %>%
-  layout(title = "Average rating vs Overall average price (Google)")
+  layout(title = "Average rating vs Overall average price (Google Play Store)")
 
 plot_two_apple <- plot_ly(
   apple_table,
@@ -35,4 +35,4 @@ plot_two_apple <- plot_ly(
   color = ~overall_avg_price, size = ~overall_avg_price
 )
 plot_two_apple <- plot_two_apple %>%
-  layout(title = "Average rating vs Overall average price (Apple)")
+  layout(title = "Average rating vs Overall average price (Apple App Store)")

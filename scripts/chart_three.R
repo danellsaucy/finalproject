@@ -102,7 +102,8 @@ apple_pie <- apple_pie %>%
   ) %>%
   layout(annotations = d)
 apple_pie <- apple_pie %>% layout(
-  title = "Spending in different age groups (Apple)", showlegend = T,
+  title = "Spending in different age groups (Apple App Store)",
+  showlegend = T,
   grid = list(rows = 2, columns = 2),
   xaxis = list(
     showgrid = FALSE, zeroline = FALSE,
@@ -154,7 +155,8 @@ google_pie <- google_pie %>%
   ) %>%
   layout(annotations = d)
 google_pie <- google_pie %>% layout(
-  title = "Spending in different age groups (Google)", showlegend = T,
+  title = "Spending in different age groups (Google Play Store)",
+  showlegend = T,
   grid = list(rows = 2, columns = 2),
   xaxis = list(
     showgrid = FALSE, zeroline = FALSE,
