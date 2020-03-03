@@ -13,6 +13,7 @@ library(knitr)
 source("scripts/sum_table.R")
 source("scripts/chart_one.R")
 source("scripts/chart_two.R")
+source("scripts/chart_three.R")
 source("scripts/app_cleaned.R")
 source("scripts/google_cleaned.R")
 ```
@@ -28,22 +29,22 @@ People that own a smartphone device have their own unique conglomeration of diff
 
 For both app stores we have aggregated the individual apps in each data set into their corresponding categories. Then we calculated the average rating, average price, and number of applications in those categories. We created two summary tables one for each app store, allowing us to compare and dictate which type of apps are more successful in the different app stores. 
 
-The category with the most apps created for in the Google Play Store is "Education" with a count of `r count_goo_educ`, while for the Apple App Store it's "Games" with a count of "3862". This tells us that these are the most heavily saturated categories in the app stores, resulting in it being more difficult for apps to gain popularity and stand out in these categories. 
+The category with the most apps created for in the Google Play Store is "Education" with a count of "r count_goo_educ", while for the Apple App Store it's "Games" with a count of "3862". This tells us that these are the most heavily saturated categories in the app stores, resulting in it being more difficult for apps to gain popularity and stand out in these categories. 
 The category with the highest average rating in the Google Play Store and Apple App Store respectively are "Books_And_Reference" with "4.48" and "Productivity" with "4.00". This tell us that more consumers are satisfied with these categories compared to others.
 The category with the lowest average rating in the Google Play Store and Apple App Store respectively are “Maps_And_Navigation” with “4.02” and “Catalogs” with “2.01”. This information tells us that these categories are not giving consumers as much satisfaction, which can indicate that app developers should avoid this category in order to raise the chances of developing a popular app.
 
 
 ## Table of Aggregated Data
 ### Google Playstore
-`r kable(test)`
+`r kable(google_table)`
 
-This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Google Playstore. From this data we can see that "`r test[1,1]`" contains the most number of applications for the specified category containing `r test[1,4]` different applications.
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Google Playstore. From this data we can see that "`r test[1,1]`" contains the most number of applications for the specified category containing `r google_table[1,4]` different applications.
 
 
 ### Apple Store
-`r kable(test2)`
+`r kable(apple_table)`
 
-This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple Store. From this data we can see that "`r test2[1,1]`" contains the most number of applications for the specified category containing `r test2[1,4]` different applications.
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple Store. From this data we can see that "`r test2[1,1]`" contains the most number of applications for the specified category containing `r apple_table[1,4]` different applications.
 
 ## Visualizations
 ### Plot 1(Amount of Applications per Category)
@@ -62,4 +63,9 @@ plot_two_google
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 plot_two_apple
+```
+
+### Plot 3
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+fig
 ```

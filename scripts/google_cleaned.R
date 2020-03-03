@@ -26,3 +26,5 @@ google_cleaned <- google_cleaned %>%
   filter(Size != "Varies with device")
 google_cleaned <- google_cleaned %>%
   filter(Category != "TRAVEL")
+google_cleaned <- google_cleaned %>%
+  filter(Content.Rating != "Unrated")
