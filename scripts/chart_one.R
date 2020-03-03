@@ -7,7 +7,7 @@ source("./scripts/sum_table.R")
 
 plot_one_google <- ggplot(
   data = google_table,
-  aes(x = Category, y = count)
+  aes(fill = count, x = Category, y = count)
 ) +
   ggtitle("Amount of applications per category (Google Play)") +
   ylab("Number of applications") +
@@ -26,7 +26,7 @@ plot_one_google <- ggplot(
 
 plot_one_apple <- ggplot(
   data = apple_table,
-  aes(x = prime_genre, y = count)
+  aes(fill = count, x = prime_genre, y = count)
 ) +
   ggtitle("Amount of applications per category (Apple Store)") +
   ylab("Number of applications") +
@@ -42,8 +42,3 @@ plot_one_apple <- ggplot(
   geom_text(aes(x = prime_genre, y = count + 100, label = count),
     size = 2
   )
-
-figure_one <- ggarrange(plot_one_google, plot_one_apple,
-  labels = c("Google", "Apple"),
-  ncol = 2, nrow = 2
-)
