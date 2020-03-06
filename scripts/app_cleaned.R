@@ -1,6 +1,6 @@
 library(dplyr)
 
-apple_initial <- read.csv("./data/AppleStore.csv", stringsAsFactors = FALSE)
+apple_initial <- read.csv("../data/AppleStore.csv", stringsAsFactors = FALSE)
 apple_cleaned <- apple_initial %>%
   select(c(
     size_bytes, price,

@@ -3,7 +3,7 @@ library(tidyr)
 library(ggplot2)
 library(ggpubr)
 
-source("./scripts/sum_table.R")
+source("../scripts/sum_table.R")
 
 plot_one_google <- ggplot(
   data = google_table,

@@ -2,8 +2,8 @@ library(dplyr)
 library(stringr)
 library(lintr)
 library(styler)
-source("./scripts/app_cleaned.R")
-source("./scripts/google_cleaned.R")
+source("../scripts/app_cleaned.R")
+source("../scripts/google_cleaned.R")
 
 get_summary_table_google <- function(google_cleaned) {
   google_cleaned <- google_cleaned %>% filter(!is.na(as.numeric(Rating)))
